@@ -12,7 +12,7 @@ interface Sync<T> {
 }
 
 interface Events {
-  on(eventName: string, callback: () => {}): void;
+  on(eventName: string, callback: () => void): void;
   trigger(eventName: string): void;
 }
 
@@ -44,7 +44,7 @@ export class Model<T extends HasId> {
 
   set(update: T): void {
     this.attributes.set(update);
-    this.events.trigger('change');
+    this.trigger('change');
   }
 
   fetch(): void {

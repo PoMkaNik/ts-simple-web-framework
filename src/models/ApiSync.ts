@@ -5,7 +5,7 @@ interface HasId {
   id?: number;
 }
 
-export class Sync<T extends HasId> {
+export class ApiSync<T extends HasId> {
   // http://localshost:3000/users <- expected format
   constructor(public rootUrl: string) {}
 
