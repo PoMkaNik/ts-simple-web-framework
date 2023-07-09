@@ -1,5 +1,6 @@
-import { User } from './models/User';
+import { UserForm } from './views/UserForm';
 
-const collection = User.buildUserCollection();
-collection.fetch();
-collection.on('change', () => console.log(collection.models));
+// ! - we now that root exists -> not null
+const userForm = new UserForm(document.getElementById('root')!);
+
+userForm.render();
