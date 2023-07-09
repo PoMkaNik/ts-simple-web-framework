@@ -29,18 +29,14 @@ export class Model<T extends HasId> {
 
   // instanceOfUser.on() -> we will call returned function using get instead of
   // using simple method to avoid passing excessive attributes to this method
-  get on() {
-    // we changed method to arrow function to 'leave' current this, not events
-    return this.events.on;
-  }
+  // get on() {
+  // we changed method to arrow function to 'leave' current this, not events
+  // return this.events.on;
+  // }
 
-  get trigger() {
-    return this.events.trigger;
-  }
-
-  get get() {
-    return this.attributes.get;
-  }
+  on = this.events.on;
+  trigger = this.events.trigger;
+  get = this.attributes.get;
 
   set(update: T): void {
     this.attributes.set(update);
